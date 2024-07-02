@@ -15,7 +15,7 @@ function getComputerChoice(choiceNum) {
 }
 
 function getHumanChoice () {
-    return prompt('Enter: rock, paper, or scissors.');
+    return prompt('Enter: rock, paper, or scissors.').toLowerCase();
 }
 
 humanScore = 0
