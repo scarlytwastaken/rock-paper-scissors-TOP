@@ -94,8 +94,9 @@ function playGame() {
 
     if (humanScore > computerScore) {
         return console.log(`You won the game! POGGERS!`);
-    } else if (computerScore > humanScore) {
+    } else if (humanScore < computerScore) {
         return console.log(`You lost the game! PIEN!`);
+    } else if (humanScore === computerScore) {
+        return console.log(`The game is a draw!`);
     } else return (console.log('ERRRORRRRRRR'));
-    
 }
