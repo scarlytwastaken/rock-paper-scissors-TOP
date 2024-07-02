@@ -36,7 +36,6 @@ function playRound () {
        
 
     if (humanChoice === 'rock') {
-        //console.log('You played rock.');
         if (computerChoice === 'rock') {
             console.log("Tie! Rock ties rock.");
             return writeScore();
@@ -52,7 +51,6 @@ function playRound () {
             return "Error: computer choice."
         }
     } else if (humanChoice === 'paper') {
-        //console.log('You played paper.');
         if (computerChoice === 'rock') {
             console.log("You win! Paper beats rock.");
             humanScore++
@@ -68,7 +66,6 @@ function playRound () {
             return "Error: computer choice."
         }
     } else if (humanChoice === 'scissors') {
-        //console.log('You played scissors.');
         if (computerChoice === 'rock') {
             console.log("You lose! Scissors is defeated by rock.");
             computerScore++
@@ -86,4 +83,19 @@ function playRound () {
     } else {
         return 'Your choice is not valid';
     }
+}
+
+function playGame() {
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+
+    if (humanScore > 2) {
+        console.log(`You won the game! POGGERS!`);
+    } else if (computerScore > 2) {
+        console.log(`You lost the game! PIEN!`);
+    } else (console.log('ERRRORRRRRRR'));
+    
 }
