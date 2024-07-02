@@ -22,6 +22,10 @@ humanScore = 0
 
 computerScore = 0
 
+function writeScore () {
+    console.log(`You have: ${humanScore} points, your opponent has ${computerScore} points.`)
+}
+
 function playRound () {
     humanChoice = getHumanChoice();
     console.log(`You played: ${humanChoice}.`);
@@ -34,47 +38,52 @@ function playRound () {
     if (humanChoice === 'rock') {
         //console.log('You played rock.');
         if (computerChoice === 'rock') {
-            return "Tie! Rock ties rock.";
+            console.log("Tie! Rock ties rock.");
+            return writeScore();
         } else if (computerChoice === 'paper') {
-            computerChoice++
-            return "You Lose! Rock is defeated by paper.";
+            console.log("You Lose! Rock is defeated by paper.");
+            computerScore++;
+            return writeScore();
         } else if (computerChoice === 'scissors') {
-            humanChoice++
-            return "You win! Rock beats scissors."
+            console.log("You win! Rock beats scissors.");
+            humanScore++
+            return writeScore();
         } else {
             return "Error: computer choice."
         }
     } else if (humanChoice === 'paper') {
         //console.log('You played paper.');
         if (computerChoice === 'rock') {
-            humanChoice++
-            return "You win! Paper beats rock.";
+            console.log("You win! Paper beats rock.");
+            humanScore++
+            return writeScore();
         } else if (computerChoice === 'paper') {
-            return "Tie! Paper ties paper.";
+            console.log("Tie! Paper ties paper.");
+            return writeScore();
         } else if (computerChoice === 'scissors') {
-            computerChoice++
-            return "You lose! Paper is defeated by scissors."
+            console.log("You lose! Paper is defeated by scissors.");
+            computerScore++
+            return writeScore();
         } else {
             return "Error: computer choice."
         }
     } else if (humanChoice === 'scissors') {
         //console.log('You played scissors.');
         if (computerChoice === 'rock') {
-            computerChoice++
-            return "You lose! Scissors is defeated by rock.";
+            console.log("You lose! Scissors is defeated by rock.");
+            computerScore++
+            return writeScore();
         } else if (computerChoice === 'paper') {
-            humanChoice++
-            return "You win! Scissors beats paper.";
+            console.log("You win! Scissors beats paper.");
+            humanScore++
+            return writeScore();
         } else if (computerChoice === 'scissors') {
-            return "Tie! Scissors ties scissors."
+            console.log("Tie! Scissors ties scissors.");
+            return writeScore();
         } else {
             return "Error: computer choice."
         }
     } else {
         return 'Your choice is not valid';
     }
-}
-
-function writeScore () {
-    console.log(`You have: ${console.log(humanScore)} points, your opponent has ${console.log(computerScore)} points.`)
 }
