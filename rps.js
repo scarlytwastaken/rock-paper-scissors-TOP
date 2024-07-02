@@ -92,10 +92,10 @@ function playGame() {
     playRound();
     playRound();
 
-    if (humanScore > 2) {
-        console.log(`You won the game! POGGERS!`);
-    } else if (computerScore > 2) {
-        console.log(`You lost the game! PIEN!`);
-    } else (console.log('ERRRORRRRRRR'));
+    if (humanScore > computerScore) {
+        return console.log(`You won the game! POGGERS!`);
+    } else if (computerScore > humanScore) {
+        return console.log(`You lost the game! PIEN!`);
+    } else return (console.log('ERRRORRRRRRR'));
     
 }
