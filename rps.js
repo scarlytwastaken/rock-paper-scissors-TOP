@@ -29,15 +29,17 @@ function playRound () {
     //console.log(choiceNum);
     computerChoice = getComputerChoice(choiceNum)
     console.log(`The opponent plays: ${computerChoice}.`);
-        
+       
 
     if (humanChoice === 'rock') {
         //console.log('You played rock.');
         if (computerChoice === 'rock') {
             return "Tie! Rock ties rock.";
         } else if (computerChoice === 'paper') {
+            computerChoice++
             return "You Lose! Rock is defeated by paper.";
         } else if (computerChoice === 'scissors') {
+            humanChoice++
             return "You win! Rock beats scissors."
         } else {
             return "Error: computer choice."
@@ -45,10 +47,12 @@ function playRound () {
     } else if (humanChoice === 'paper') {
         //console.log('You played paper.');
         if (computerChoice === 'rock') {
+            humanChoice++
             return "You win! Paper beats rock.";
         } else if (computerChoice === 'paper') {
             return "Tie! Paper ties paper.";
         } else if (computerChoice === 'scissors') {
+            computerChoice++
             return "You lose! Paper is defeated by scissors."
         } else {
             return "Error: computer choice."
@@ -56,8 +60,10 @@ function playRound () {
     } else if (humanChoice === 'scissors') {
         //console.log('You played scissors.');
         if (computerChoice === 'rock') {
+            computerChoice++
             return "You lose! Scissors is defeated by rock.";
         } else if (computerChoice === 'paper') {
+            humanChoice++
             return "You win! Scissors beats paper.";
         } else if (computerChoice === 'scissors') {
             return "Tie! Scissors ties scissors."
@@ -66,5 +72,9 @@ function playRound () {
         }
     } else {
         return 'Your choice is not valid';
-    }   
+    }
+}
+
+function writeScore () {
+    console.log(`You have: ${console.log(humanScore)} points, your opponent has ${console.log(computerScore)} points.`)
 }
